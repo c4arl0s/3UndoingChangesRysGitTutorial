@@ -17,20 +17,20 @@
 
 # [3 Undoing Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content-1)
 
-- In the last module, we learned how to record versions of a project into a Git repositoru.
-- The whole point of maintaining these **"safe"** copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
+In the last module, we learned how to record versions of a project into a Git repositoru.
+The whole point of maintaining these **"safe"** copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
 
-- To this end, storing **"safe"** versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
+To this end, storing **"safe"** versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
 
 # 	* [Display Commit Checksums](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
-- Quick review
+Quick review
 
 ```console
 $ git log --oneline
 ```
 
-- output
+output
 
 ```console
 453c8a4 Add navigation links
@@ -38,8 +38,8 @@ $ git log --oneline
 6a442fc Create index page for the message
 ```
 
-- git only outputs the first seven characters of the checksum.
-- These first few characters effectively serve as a unique ID for each commit.
+git only outputs the first seven characters of the checksum.
+These first few characters effectively serve as a unique ID for each commit.
 
 # 	* [View an Old Version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
@@ -47,7 +47,7 @@ $ git log --oneline
 $ git checkout 1047951
 ```
 
-- output
+output
 
 ```console
 Note: switching to '1047951'.
@@ -78,7 +78,7 @@ HEAD is now at 1047951 t Add blue an orange html files
 $ git checkout 6a442fc
 ```
 
-- output
+output
 
 ```console
 Previous HEAD position was 1047951 t Add blue an orange html files
@@ -93,7 +93,7 @@ HEAD is now at 6a442fc Create index page for the message
 $ git checkout master
 ```
 
-- output
+output
 
 ```console
 Previous HEAD position was 6a442fc Create index page for the message
@@ -108,7 +108,7 @@ Switched to branch 'master'
 $ git tag -a v1.0 -m "Stable Version of the website"
 ```
 
-- print all tags
+print all tags
 
 ```console
 $ git tag
@@ -116,7 +116,7 @@ v1.0
 ```
 # 	* [Try a Crazy Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
-- create crazy.html
+create crazy.html
 
 ```html
 <!DOCTYPE html>
@@ -141,7 +141,7 @@ v1.0
 $ git add crazy.html 
 ```
 
-- commit
+commit
 
 ```console
 $ git commit -m "Add a crazzy experiment"
@@ -150,7 +150,7 @@ $ git commit -m "Add a crazzy experiment"
  create mode 100644 crazy.html
 ```
 
-- status
+status
 
 ```console
 commit 12e24f0c4e03b3c991b287230548d8bdad3882d7
@@ -184,19 +184,19 @@ Date:   Fri May 22 12:54:21 2020 -0500
 $ git checkout v1.0
 ```
 
-- output
+output
 
 ```console
 HEAD is now at 453c8a4 Add navigation links
 ```
 
-- go back to master
+go back to master
 
 ```console
 $ git checkout master
 ```
 
-- output
+output
 
 ```console
 Previous HEAD position was 453c8a4 Add navigation links
@@ -204,15 +204,15 @@ Switched to branch 'master'
 ```
 # 	* [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
-- We are ready to restore our stable tag by removing the most recent commit.
-- Make sure to change the 12e24f0 to the ID to the crazy experiment's commit before running the next command:
+We are ready to restore our stable tag by removing the most recent commit.
+Make sure to change the 12e24f0 to the ID to the crazy experiment's commit before running the next command:
 
 ```console
 $ git revert 12e24f0
 ```
 
-- This will show you the vim editor with the default message "Revert "Add a crazzy experiment"
-- Save and close
+This will show you the vim editor with the default message "Revert "Add a crazzy experiment"
+Save and close
 
 ```console
 $ git revert 12e24f0
@@ -222,13 +222,13 @@ Removing crazy.html
  delete mode 100644 crazy.html
 ```
 
-- git log
+git log
 
 ```console
 $ git log --oneline
 ```
 
-- output
+output
 
 ```console
 3553479 Revert "Add a crazzy experiment"
@@ -244,14 +244,14 @@ $ git log --oneline
 
 ![Screen Shot 2020-05-22 at 21 15 21](https://user-images.githubusercontent.com/24994818/82719550-605a7580-9c71-11ea-9926-618e5053ab4c.png)
 
-- **When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to**.
-- It helps to think of this command as saying **"undo this commit"** rather than "restore this version"
+**When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to**.
+It helps to think of this command as saying **"undo this commit"** rather than "restore this version"
 
 # 	* [Start a Smaller Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
-- Let's try a smaller experiment this time.
-- Create dummy.html and leave it as a blank file.
-- Then, add a link in the "Navigation Section" of index.html so that it resembles the following.
+Let's try a smaller experiment this time.
+Create dummy.html and leave it as a blank file.
+Then, add a link in the "Navigation Section" of index.html so that it resembles the following.
 
 ```html
 <h2>Navigation</h2>
@@ -268,17 +268,17 @@ $ git log --oneline
 </ul>
 ```
 
-- In the next section, we are going to abandon this uncommitted experiment. But since the git revert command requires a commit ID to undo, we can't use the method discussed above.
+In the next section, we are going to abandon this uncommitted experiment. But since the git revert command requires a commit ID to undo, we can't use the method discussed above.
 
 # 	* [Undo Uncommitted Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
-- Before we start undoing things, let's take a look at the status of our repository
+Before we start undoing things, let's take a look at the status of our repository
 
 ```console
 $ git status
 ```
 
-- output
+output
 
 ```console
 On branch master
@@ -294,20 +294,20 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-- We have a tracked file and an untracked file that need to be changed. First, we will take care of index.html
+We have a tracked file and an untracked file that need to be changed. First, we will take care of index.html
 
 ```console
 $ git reset --hard
 ```
 
-- output
+output
 
 ```console
 HEAD is now at 3553479 Revert "Add a crazzy experiment"
 ```
 
-- This changes all tracked files to match the most recent commit. Note that the --hard flag is what actually updates the file.
-- Running git reset without any flags will simply unstage index.html, leaving its contents as is.
+This changes all tracked files to match the most recent commit. Note that the --hard flag is what actually updates the file.
+Running git reset without any flags will simply unstage index.html, leaving its contents as is.
 
 ```console
 $ git status
@@ -317,18 +317,18 @@ Untracked files:
 	dummy.html
 ```
 
-- In either case, git reset only operates on the working directory and the staging area, so our git log history remains unchanged.
+In either case, git reset only operates on the working directory and the staging area, so our git log history remains unchanged.
 
 * Next, let's remove the dummy.html file.
 * Of course, we could manually delete it, but using Git to reset changes eliminates human errors when working with several files in large teams.
-- Run the following commands,
+Run the following commands,
 
 ```console
 $ git clean -f
 Removing dummy.html
 ```
 
-- This will remove all untracked files. With dummy.html gone, git status should now tell us that we have a "clean" working directory, meaning our project matches the most recent commit.
+This will remove all untracked files. With dummy.html gone, git status should now tell us that we have a "clean" working directory, meaning our project matches the most recent commit.
 
 ```console
 $ git status
@@ -336,8 +336,8 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-- **Be careful** with **git reset** and **git clean**. Both operate on the working directory, not on the committed snapshots.
-- Unlike **git revert**, they permanently undo changes, so make sure you really want to trash what you are working on before you use them.
+**Be careful** with **git reset** and **git clean**. Both operate on the working directory, not on the committed snapshots.
+Unlike **git revert**, they permanently undo changes, so make sure you really want to trash what you are working on before you use them.
 
 	
 # 	* [Conclusion](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
