@@ -242,7 +242,7 @@ output
 2. So, our fifth commit and our third commit represent the exact same snapshot, as shown below.
 3. **Again, Git is designed to never lose history: the fourth snapshot is still accessible, just in case we want to continue developing it**.
 
-![Screen Shot 2020-05-22 at 21 15 21](https://user-images.githubusercontent.com/24994818/82719550-605a7580-9c71-11ea-9926-618e5053ab4c.png)
+![executingRevert](https://user-images.githubusercontent.com/24994818/111040590-3c7f4080-83f9-11eb-8b73-18b1a252e613.png)
 
 **When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to**.
 It helps to think of this command as saying **"undo this commit"** rather than "restore this version"
