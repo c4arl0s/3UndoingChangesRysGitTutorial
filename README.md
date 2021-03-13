@@ -1,30 +1,28 @@
-# 3UndoingChangesRysGitTutorial
+# [go back to content](https://github.com/c4arl0s/RysGitTutorial#rys-git-tutorial)
 
-3 Undoing Changes Rys Git Tutorial
+# [3 Undoing Changes Rys Git Tutorial - Content](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#go-back-to-content)
+ * [Display Commit Checksums](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-display-commit-checksums)
+ * [View an Old Version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-view-an-old-version)
+ * [View an Older Version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-view-an-older-version)
+ * [Return to current version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-return-to-current-version)
+ * [Tag a Release](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-tag-a-release)
+ * [Try a Crazy Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-try-a-crazy-experiment)
+ * [Stage and Commit the Snapshot](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-stage-and-commit-the-snapshot)
+ * [View the Stable Commit](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-view-the-stable-commit)
+ * [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes)
+ * [Start a Smaller Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-start-a-smaller-experiment)
+ * [Undo Uncommitted Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-uncommitted-changes)
+ * [Conclusion](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-conclusion)
+ * [Quick References](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-quick-references)
 
-# 3. [Undoing Changes](https://github.com/c4arl0s/RysGitTutorial#3-undoing-changes)
- * [Display Commit Checksums](https://github.com/c4arl0s/RysGitTutorial#-display-commit-checksums)
- * [View an Old Version](https://github.com/c4arl0s/RysGitTutorial#-view-an-old-version)
- * [View an Older Version](https://github.com/c4arl0s/RysGitTutorial#-view-an-older-version)
- * [Return to current version](https://github.com/c4arl0s/RysGitTutorial#-return-to-current-version)
- * [Tag a Release](https://github.com/c4arl0s/RysGitTutorial#-tag-a-release)
- * [Try a Crazy Experiment](https://github.com/c4arl0s/RysGitTutorial#-try-a-crazy-experiment)
- * [Stage and Commit the Snapshot](https://github.com/c4arl0s/RysGitTutorial#-stage-and-commit-the-snapshot-1)
- * [View the Stable Commit]()
- * [Undo Committed Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-committed-changes)
- * [Start a Smaller Experiment](https://github.com/c4arl0s/RysGitTutorial#-start-a-smaller-experiment)
- * [Undo Uncommitted Changes](https://github.com/c4arl0s/RysGitTutorial#-undo-uncommitted-changes)
- * [Conclusion](https://github.com/c4arl0s/RysGitTutorial#-conclusion-1)
- * [Quick References](https://github.com/c4arl0s/RysGitTutorial#-quick-references)
-
-# 3. [Undoing Changes](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# [3 Undoing Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content-1)
 
 - In the last module, we learned how to record versions of a project into a Git repositoru.
-- The whole point of maintaining these "safe" copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
+- The whole point of maintaining these **"safe"** copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
 
-- To this end, storing "safe" versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
+- To this end, storing **"safe"** versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
 
-# 	* [Display Commit Checksums](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# 	* [Display Commit Checksums](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 - Quick review
 
@@ -43,7 +41,7 @@ $ git log --oneline
 - git only outputs the first seven characters of the checksum.
 - These first few characters effectively serve as a unique ID for each commit.
 
-# 	* [View an Old Version](https://github.com/c4arl0s/RysGitTutorial#rysgittutorial)
+# 	* [View an Old Version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git checkout 1047951
@@ -74,7 +72,7 @@ HEAD is now at 1047951 t Add blue an orange html files
 
 ![Screen Shot 2020-05-22 at 17 19 07](https://user-images.githubusercontent.com/24994818/82713376-60964900-9c50-11ea-81a9-6f1b73ca260d.png)
 
-# 	* [View an Older Version]()
+# 	* [View an Older Version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git checkout 6a442fc
@@ -89,7 +87,7 @@ HEAD is now at 6a442fc Create index page for the message
 
 ![Screen Shot 2020-05-22 at 17 37 35](https://user-images.githubusercontent.com/24994818/82714202-427e1800-9c53-11ea-8dbe-92ec1f95695b.png)
 
-# 	* [Return to current version]()
+# 	* [Return to current version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git checkout master
@@ -104,7 +102,7 @@ Switched to branch 'master'
 
 ![Screen Shot 2020-05-22 at 17 41 33](https://user-images.githubusercontent.com/24994818/82714291-8244ff80-9c53-11ea-9a67-7949b919670b.png)
 
-# 	* [Tag a Release]()
+# 	* [Tag a Release](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git tag -a v1.0 -m "Stable Version of the website"
@@ -116,7 +114,7 @@ $ git tag -a v1.0 -m "Stable Version of the website"
 $ git tag
 v1.0
 ```
-# 	* [Try a Crazy Experiment]()
+# 	* [Try a Crazy Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 - create crazy.html
 
@@ -137,7 +135,7 @@ v1.0
 </html>
 ```
 
-# 	* [Stage and Commit the Snapshot]()
+# 	* [Stage and Commit the Snapshot](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git add crazy.html 
@@ -180,7 +178,7 @@ Date:   Fri May 22 12:54:21 2020 -0500
     Create index page for the message
 
 ```
-# 	* [View the Stable Commit]()
+# 	* [View the Stable Commit](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git checkout v1.0
@@ -204,7 +202,7 @@ $ git checkout master
 Previous HEAD position was 453c8a4 Add navigation links
 Switched to branch 'master'
 ```
-# 	* [Undo Committed Changes]()
+# 	* [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 - We are ready to restore our stable tag by removing the most recent commit.
 - Make sure to change the 12e24f0 to the ID to the crazy experiment's commit before running the next command:
@@ -240,16 +238,16 @@ $ git log --oneline
 6a442fc Create index page for the message
 ```
 
-- Notice that instead of deleting the "crazzy experiment" commit, Git figures out how to undo the changes it contains, the tacks on another commit with the resulting content.
-- So, our fifth commit and our third commit represent the exact same snapshot, as shown below.
-- Again, Git is designed to never lose history: the fourth snapshot is still accessible, just in case we want to continue developing it.
+1. Notice that instead of deleting the "crazzy experiment" commit, Git figures out how to undo the changes it contains, the tacks on another commit with the resulting content.
+2. So, our fifth commit and our third commit represent the exact same snapshot, as shown below.
+3. **Again, Git is designed to never lose history: the fourth snapshot is still accessible, just in case we want to continue developing it**.
 
 ![Screen Shot 2020-05-22 at 21 15 21](https://user-images.githubusercontent.com/24994818/82719550-605a7580-9c71-11ea-9926-618e5053ab4c.png)
 
-- When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to.
-- It helps to think of this command as saying "undo this commit" rather than "restore this version"
+- **When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to**.
+- It helps to think of this command as saying **"undo this commit"** rather than "restore this version"
 
-# 	* [Start a Smaller Experiment]()
+# 	* [Start a Smaller Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 - Let's try a smaller experiment this time.
 - Create dummy.html and leave it as a blank file.
@@ -272,7 +270,7 @@ $ git log --oneline
 
 - In the next section, we are going to abandon this uncommitted experiment. But since the git revert command requires a commit ID to undo, we can't use the method discussed above.
 
-# 	* [Undo Uncommitted Changes]()
+# 	* [Undo Uncommitted Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 - Before we start undoing things, let's take a look at the status of our repository
 
@@ -342,32 +340,41 @@ nothing to commit, working tree clean
 - Unlike **git revert**, they permanently undo changes, so make sure you really want to trash what you are working on before you use them.
 
 	
-# 	* [Conclusion]()
+# 	* [Conclusion](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
+
+1. **It helps to think of this command as saying "undo this commit" rather than "restore this version"**.
+2.  **When using git revert, remember to specify the commit that you want to undo -- not the stable commit that you want to return to**.
 
 ![Screen Shot 2020-05-23 at 7 46 49](https://user-images.githubusercontent.com/24994818/82731017-94618500-9cc9-11ea-9d20-5bb40446c1b3.png)
 
-# 	* [Quick References]()
+# 	* [Quick References](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
 ```console
 $ git checkout commitID
 ```
+View a previous commit.
 
 ```console
 $ git tag -a tagName -m "description"
 ```
+Create an annotated tag pointing to the most recent commit.
 
 ```console
 $ git revert commitID
 ```
+Undo the specified commit by applying a new commit.
 
 ```console
 $ git reset --hard
 ```
+Reset tracked files to match the most recent commit.
 
 ```console
 $ git clean -f
 ```
+Remove untracked files.
 
 ```console
 $ git reset --hard / git clean -f
 ```
+Permanently undo uncommitted changes.
