@@ -9,18 +9,18 @@
  * [Try a Crazy Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-try-a-crazy-experiment)
  * [Stage and Commit the Snapshot](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-stage-and-commit-the-snapshot)
  * [View the Stable Commit](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-view-the-stable-commit)
- * [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes)
+ * [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes) (revert)
  * [Start a Smaller Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-start-a-smaller-experiment)
- * [Undo Uncommitted Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-uncommitted-changes)
+ * [Undo Uncommitted Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes-revert)
  * [Conclusion](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-conclusion)
  * [Quick References](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-quick-references)
 
 # [3 Undoing Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content-1)
 
 In the last module, we learned how to record versions of a project into a Git repositoru.
-The whole point of maintaining these **"safe"** copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced.
+**The whole point of maintaining these "safe" copies is peace of mind: should our project suddenly break, we will know that we have easy access to a functional version, and we will be able to pinpoint precisely where the problem was introduced**.
 
-To this end, storing **"safe"** versions is not much help without the ability to restore them.- Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes.
+To this end, storing "safe" versions is not much help without the ability to restore them. **Our next task is to learn how to view the previous states of a project, revert back to them, and reset uncommitted changes**.
 
 # 	* [Display Commit Checksums](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
@@ -202,9 +202,9 @@ output
 Previous HEAD position was 453c8a4 Add navigation links
 Switched to branch 'master'
 ```
-# 	* [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
+# 	* [Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content) (revert)
 
-We are ready to restore our stable tag by removing the most recent commit.
+**We are ready to restore our stable tag by removing the most recent commit**.
 Make sure to change the 12e24f0 to the ID to the crazy experiment's commit before running the next command:
 
 ```console
@@ -242,7 +242,7 @@ output
 2. So, our fifth commit and our third commit represent the exact same snapshot, as shown below.
 3. **Again, Git is designed to never lose history: the fourth snapshot is still accessible, just in case we want to continue developing it**.
 
-![executingRevert](https://user-images.githubusercontent.com/24994818/111040590-3c7f4080-83f9-11eb-8b73-18b1a252e613.png)
+![111040590-3c7f4080-83f9-11eb-8b73-18b1a252e613](https://user-images.githubusercontent.com/24994818/112473181-a4a41f80-8d33-11eb-8ce5-e7ff917a51b0.png)
 
 **When using git revert, remember to specify the commit that you want to undo-- not the stable commit that you want to return to**.
 It helps to think of this command as saying **"undo this commit"** rather than "restore this version"
@@ -306,7 +306,7 @@ output
 HEAD is now at 3553479 Revert "Add a crazzy experiment"
 ```
 
-This changes all tracked files to match the most recent commit. Note that the --hard flag is what actually updates the file.
+ instead of deleting the "crazzy experiment" This changes all tracked files to match the most recent commit. Note that the --hard flag is what actually updates the file.
 Running git reset without any flags will simply unstage index.html, leaving its contents as is.
 
 ```console
@@ -336,8 +336,8 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-**Be careful** with **git reset** and **git clean**. Both operate on the working directory, not on the committed snapshots.
-Unlike **git revert**, they permanently undo changes, so make sure you really want to trash what you are working on before you use them.
+**Be careful with git reset and git clean**. **Both operate on the working directory, not on the committed snapshots**.
+Unlike git revert, they permanently undo changes, so make sure you really want to trash what you are working on before you use them.
 
 	
 # 	* [Conclusion](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
