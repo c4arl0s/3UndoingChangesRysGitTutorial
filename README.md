@@ -10,7 +10,7 @@
 6. [x] [6. Try a Crazy Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-try-a-crazy-experiment)
 7. [x] [7. Stage and Commit the Snapshot](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-stage-and-commit-the-snapshot)
 8. [x] [8. View the Stable Commit](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-view-the-stable-commit)
-9. [x] [9. Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes) (revert)
+9. [x] [9. Undo Committed Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes-revert) (revert)
 10. [x] [10. Start a Smaller Experiment](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-start-a-smaller-experiment)
 11. [x] [11. Undo Uncommitted Changes](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-undo-committed-changes-revert)
 12. [x] [12. Conclusion](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#-conclusion)
@@ -40,7 +40,7 @@ output
 ```
 
 git only outputs the first seven characters of the checksum.
-These first few characters effectively serve as a unique ID for each commit.
+These first few characters effectively serve as a unique `ID` for each commit.
 
 # 	* [View an Old Version](https://github.com/c4arl0s/3UndoingChangesRysGitTutorial#3-undoing-changes-rys-git-tutorial---content)
 
@@ -307,7 +307,7 @@ output
 HEAD is now at 3553479 Revert "Add a crazzy experiment"
 ```
 
- instead of deleting the "crazzy experiment" This changes all tracked files to match the most recent commit. Note that the --hard flag is what actually updates the file.
+ instead of deleting the "crazzy experiment" This changes all tracked files to match the most recent commit. Note that the `--hard` flag is what actually updates the file.
 Running git reset without any flags will simply unstage index.html, leaving its contents as is.
 
 ```console
@@ -320,7 +320,7 @@ Untracked files:
 
 In either case, git reset only operates on the working directory and the staging area, so our git log history remains unchanged.
 
-* Next, let's remove the dummy.html file.
+* Next, let's remove the `dummy.html` file.
 * Of course, we could manually delete it, but using Git to reset changes eliminates human errors when working with several files in large teams.
 Run the following commands,
 
